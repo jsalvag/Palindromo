@@ -1,0 +1,81 @@
+clase nodo{
+	entero numero
+	nodo sig
+}
+
+clase Palindromo{
+	nodo top, front
+	char numero
+	int contador, resultado
+}
+
+inicio
+	imprimir("Introduzca numero")
+	leer(numero como arreglo de char)
+
+	llenar Estructuras(numero){
+	nodo aux
+		para i = 0; mientras i menor que largo de numero; i++
+			Pila(){
+				nodo nuevo;
+				si top es nulo
+					top = numero[i]
+				sino
+					aux = top
+					top = numero[i]
+					top sig = aux
+				fin si
+			}
+			Cola(){
+				nodo nuevo
+				si front es nulo
+					front = numero[i]
+				sino
+					aux = front
+					mientras aux no se nulo
+						aux = aux sig
+					fin mientras
+					aux sig = numero[i]
+				fin si
+			}
+	}
+
+	comprar Estructuras(){
+		noxo auxPila, auxCola
+		auxPila = top
+		auxCola = front
+
+		mientras auxPila o auxCola no sena nullos
+			si pila numero es diferente a cola numero
+				imprimir("No es Palindromo, se sumara con su contrapuesto")
+				sumar();
+			sino
+				imprimir("Es Palindromo "+numero)
+			fin si
+	}
+
+	sumar(){
+		cadena pila, cola
+		noxo auxPila, auxCola
+		auxPila = top
+		auxCola = front
+
+		mientras auxPila diferente de nulo
+			pila = pila + auxPila numero
+			auxPila = auxPila sig
+		fin mientras
+		mientras auxCola diferente de nulo
+			cola = cola + auxCola numero
+			auxCola = auxCola sig
+		fin mientras
+
+		pila y cola a entero
+
+		sumar = pila + cola
+
+		llenar Estructuras(suma)
+
+		comprar Estructuras()
+			
+	}
+fin.

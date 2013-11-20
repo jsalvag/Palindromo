@@ -95,7 +95,7 @@ public class Palindromo {
 		if(!comparador()){
 			BigInteger suma= new BigInteger("1");
 			cont++;
-			System.out.println("No es palindromo...");
+			System.out.println("No es palindromo..."+cont);
 			while(auxP!=null || auxC!=null){
 				sPila+=auxP.c+"";
 				sCola+=auxC.c+"";
@@ -108,7 +108,10 @@ public class Palindromo {
 			suma=a.add(b);
 			res=suma;
 			crearPilaCola((suma+"").toCharArray());
-			sumador();
+                        if(cont<=1000)
+                            sumador();
+                        else
+                            System.out.println("La operacion se ha realizado mas de 1000 veces, el numero ya es demasiado grande...");
 		}else{
 			System.out.println("Es palindromo...\t"+res+"\nSe sumó con su contrapuesto "+cont+" veces");
 		}
